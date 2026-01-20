@@ -1,0 +1,115 @@
+
+```
+     _____ ____ __ ____ __   __ _____ _      __    _
+    /  ___) _  \  ) _  \  ) /  ) __  \ \    / )\  / )
+   /  /_ / /_) / / /_) / /_/  / /__) /  \  / /\ \/ /
+  /  ___)  ___/ /  ___/ __   / ___  / /\ \/ /  \  /
+ /  /__/  / /  /  / /  / /  / /  / / /  \  /   / /
+(______)_/ (__/__/ (__/ (__/_/  (_/_/   (_/   (_/
+```
+
+Epiphany is a GPL'ed (free software) multi-platform clone of BoulderDash.
+The player must collect all valuable minerals scattered in levels,
+avoiding being hit by a falling boulder, or (worst :) by a bomb.
+
+
+Current version: 0.9.0
+Tested under Linux and Win32, on x86_64 systems;
+
+It is an alpha version, but it is playable.
+It uses SDL2 and SDL2_mixer (http://www.libsdl.org), so make sure they are properly 
+installed before compiling Epiphany.
+
+---
+
+## Building Epiphany
+
+### Quick Start
+
+```bash
+./build.sh              # Build the project
+./build.sh --debug      # Build in debug mode
+./build.sh --clean      # Clean and rebuild
+```
+
+The binary will be created at `build/epiphany-game`
+
+### Running
+
+```bash
+cd build && ./epiphany-game
+```
+
+### Requirements
+- SDL2
+- SDL2_mixer
+- C++ compiler with C++11 support
+
+---
+
+## Playing the Game
+
+### Command Line Options
+
+```bash
+epiphany-game --help                    # Show usage information
+epiphany-game --map ./mylevel.map       # Play a custom map
+```
+
+### In-Game Keys
+- Arrow keys → move player
+- Space bar → snap (eat without move)
+- P or Pause → pause game
+
+---
+
+## Creating Maps
+
+Read the `docs/Tech` file for information about how to write new maps.
+
+Eric Mangold made a level editor (using Python): 
+https://github.com/tera-torn/epiphany-editor
+
+---
+
+## Project Information
+
+### Source Code & Releases
+
+- GitHub: https://github.com/giuppe/epiphany-game
+- Debian package: http://packages.debian.org/epiphany
+- Releases: https://github.com/giuppe/epiphany-game/releases
+
+### License
+
+See `docs/COPYING` for license information.
+
+### Directory Structure
+
+```
+epiphany-game/
+├── src/                # Source code (.cpp, .c files)
+│   ├── main.cpp       # Application entry point
+│   ├── core/          # Core game engine (game loop, input, audio)
+│   ├── game_logic/    # Game logic and entity management
+│   ├── entities/      # Game entity implementations
+│   ├── menu/          # Menu system
+│   ├── rendering/     # Graphics and rendering
+│   ├── config/        # Configuration management
+│   ├── parsers/       # File parsers and resource loading
+│   ├── fonts/         # Font rendering
+│   └── tinyxml/       # XML parsing library
+├── include/           # Header files (.h files)
+├── data/              # Game assets (graphics, sounds, maps)
+├── build/             # Build output directory (generated)
+├── docs/              # Documentation files
+└── build-aux/         # Autotools auxiliary files
+```
+
+---
+
+## Contact
+
+For any comments, bugs, ideas or suggestions, write to:
+Giuseppe D'Aqui' <giuseppe.da@gmail.com>
+
