@@ -12,45 +12,112 @@ The player must collect all valuable minerals scattered in levels,
 avoiding being hit by a falling boulder, or (worst :) by a bomb.
 
 
-Current version: 0.7.0
-Tested under Linux and Win32, on i386 systems;
+Current version: 0.9.0
+Tested under Linux and Win32, on x86_64 systems;
 
-It is a alpha version, but it is playable.
-It uses SDL 1.2 and SDL_mixer 1.2 (http://www.libsdl.org), so make sure it is properly installed
-before compiling Epiphany.
-
-Read "Tech" file for informations about how to write new maps.
-
-If you want to play contributed maps, just launch epiphany with the new map in the command line, e.g.:
-epiphany --map ./mylevel.map
-
-Use:
-epiphany --help
-for other usage information.
-
-In-Game Keys:
-Arrow keys -> move player;
-Space bar -> snap (eat without move);
-P or Pause -> pause game;
----
-
-You can find Epiphany source on:
-Github:						https://github.com/giuppe/epiphany-game
-Debian package:				http://packages.debian.org/epiphany
-
-You can download a release (for Windows or Linux) from Github:
-https://github.com/giuppe/epiphany-game/releases
+It is an alpha version, but it is playable.
+It uses SDL2 and SDL2_mixer (http://www.libsdl.org), so make sure they are properly 
+installed before compiling Epiphany.
 
 ---
 
-Eric Mangold made a level editor (using python). 
-You can find it on epiphany-editor project page:
-[https://github.com/tera-torn/epiphany-editor]
+## Building Epiphany
+
+### Quick Start
+
+```bash
+./build.sh              # Build the project
+./build.sh --debug      # Build in debug mode
+./build.sh --clean      # Clean and rebuild
+```
+
+The binary will be created at `build/epiphany-game`
+
+### Running
+
+```bash
+cd build && ./epiphany-game
+```
+
+### Requirements
+- SDL2
+- SDL2_mixer
+- C++ compiler with C++11 support
 
 ---
-See COPYING for license.
+
+## Playing the Game
+
+### Command Line Options
+
+```bash
+epiphany-game --help                    # Show usage information
+epiphany-game --map ./mylevel.map       # Play a custom map
+```
+
+### In-Game Keys
+- Arrow keys → move player
+- Space bar → snap (eat without move)
+- P or Pause → pause game
+
 ---
 
-For any comment, bugs, ideas or <whatever you want>, write to:
+## Creating Maps
+
+Read the `docs/Tech` file for information about how to write new maps.
+
+Eric Mangold made a level editor (using Python): 
+https://github.com/tera-torn/epiphany-editor
+
+---
+
+## Project Information
+
+### Source Code & Releases
+
+- GitHub: https://github.com/giuppe/epiphany-game
+- Debian package: http://packages.debian.org/epiphany
+- Releases: https://github.com/giuppe/epiphany-game/releases
+
+### License
+
+See `docs/COPYING` for license information.
+
+### Directory Structure
+
+```
+epiphany-game/
+├── src/                # Source code (.cpp, .c files)
+│   ├── main.cpp       # Application entry point
+│   ├── core/          # Core game engine (game loop, input, audio)
+│   ├── game_logic/    # Game logic and entity management
+│   ├── entities/      # Game entity implementations
+│   ├── menu/          # Menu system
+│   ├── rendering/     # Graphics and rendering
+│   ├── config/        # Configuration management
+│   ├── parsers/       # File parsers and resource loading
+│   ├── fonts/         # Font rendering
+│   └── tinyxml/       # XML parsing library
+├── include/           # Header files (.h files)
+│   ├── core/          # Core game engine headers
+│   ├── game_logic/    # Game logic and entity management headers
+│   ├── entities/      # Game entity headers
+│   ├── menu/          # Menu system headers
+│   ├── rendering/     # Graphics and rendering headers
+│   ├── config/        # Configuration headers
+│   ├── parsers/       # Parser headers
+│   ├── fonts/         # Font rendering headers
+│   └── tinyxml/       # TinyXML headers
+├── data/              # Game assets (graphics, sounds, maps)
+├── build/             # Build output directory (generated)
+├── docs/              # Documentation files
+└── build-aux/         # Autotools auxiliary files
+```
+
+---
+
+## Contact
+
+For any comments, bugs, ideas or suggestions, write to:
 Giuseppe D'Aqui' <giuseppe.da@gmail.com>
 

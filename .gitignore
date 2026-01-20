@@ -1,32 +1,70 @@
-autom4te.cache
-Makefile
-*.in
-config.h
-config.h.in~
-missing
-depcomp
-install-sh
+# Build directory (out-of-source builds)
+build/
+
+# Autotools generated files
+autom4te.cache/
+config.log
 config.status
+config.h
 stamp-h1
+.deps/
+.depsdir
+aclocal.m4
 configure
+
+# Build auxiliary directory generated files
+build-aux/config.h.in
+
+# Generated Makefiles
+Makefile
+include/Makefile
+src/Makefile
+data/Makefile
+data/gfx/Makefile
+data/maps/Makefile
+data/sfx/Makefile
+
+# Compiled binaries and objects
+*.o
+*.lo
+*.la
+*.so
+*.so.*
+*.a
+
+# Build output directories (.deps from all src subdirectories)
+src/*/.deps
+
+# IDE files
 .cdtproject
 .project
-.settings
-aclocal.m4
-*.deb
-description-pak
-doc-pak
-*.bz2
-*.gz
-*.cproject
-debug
+.cproject
+.settings/
 *.kdevelop
 *.pcs
 *.kdevses
+debug/
+
+# Package files
+*.deb
+*.bz2
+*.gz
+*.rpm
+description-pak
+doc-pak
+
+# Profiling and debugging
 callgrind.out.*
-src/epiphany
-**/Makefile.in
-src/Makefile
-src/.deps
-src/epiphany-game
-src/*.o
+gmon.out
+*.gcda
+*.gcno
+*.gcov
+
+# Backup and temporary files
+*~
+*.swp
+*.swo
+.*.swp
+.*.swo
+\#*\#
+.\#*
