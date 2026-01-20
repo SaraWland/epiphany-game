@@ -99,15 +99,6 @@ epiphany-game/
 │   ├── fonts/         # Font rendering
 │   └── tinyxml/       # XML parsing library
 ├── include/           # Header files (.h files)
-│   ├── core/          # Core game engine headers
-│   ├── game_logic/    # Game logic and entity management headers
-│   ├── entities/      # Game entity headers
-│   ├── menu/          # Menu system headers
-│   ├── rendering/     # Graphics and rendering headers
-│   ├── config/        # Configuration headers
-│   ├── parsers/       # Parser headers
-│   ├── fonts/         # Font rendering headers
-│   └── tinyxml/       # TinyXML headers
 ├── data/              # Game assets (graphics, sounds, maps)
 ├── build/             # Build output directory (generated)
 ├── docs/              # Documentation files
